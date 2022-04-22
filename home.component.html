@@ -1,0 +1,11 @@
+<!-- <p>Home works!</p> -->
+
+<div class="container">
+    <div style="padding-top: 4rem;">
+        <input type="file" (change)="onFileChange($event)" multiple="false">
+    </div>
+    <div style="text-align: right;">
+        <a [routerLink]="['/display']" class="btn btn-primary">Display Data</a>
+    </div>
+    <p>{{mssg}}</p>
+</div>

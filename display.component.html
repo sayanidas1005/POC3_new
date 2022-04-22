@@ -1,0 +1,31 @@
+<!-- <p>display works!</p> -->
+<body>
+  <div class="container">
+    <h1 class="text-center mt-4 mb-4" style="color: #3491cf;">Display Page</h1>
+    <div style="text-align: right;">
+      <a [routerLink]="['/home']" class="btn btn-primary">Back</a>
+    </div>
+  
+    <div class="container" >
+      <select [(ngModel)]="selectedSheetName" (change)="selectChangeHandler($event)">
+        <option [ngValue]="null" selected disabled>Select Sheet</option>
+        <option *ngFor="let val of dataSheets" [value]="val.Population">{{val.Population}}</option>
+      </select>
+      <p><span>You selected:</span><b>{{selectedSheet}}</b></p>
+  
+      <!-- <p *ngFor='let sheet of dataSheets'>
+            {{sheet.Population}}
+            {{sheet.Year}}
+         </p> -->
+  
+         <div *ngIf="rowData!=null" class="text-center">
+           <ag-grid-angular style="width: 620px; height: 300px;" 
+          class="ag-theme-balham" 
+          [rowData]="rowData"
+            [columnDefs]="columnDefs">
+          </ag-grid-angular>
+        </div>
+      
+    </div>
+  </div>
+</body>
